@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Mission6.Models.ApplicationResponse
+
+<form method="post">
+    <label>Movie Title: </label>
+    <input asp-for="Title" />
+    <label>Movie Category: </label>
+    <input asp-for="Category" />
+    <label>Year</label>
+    <input asp-for="Year" />
+    <label>Director Name:</label>
+    <input asp-for="Director" />
+    <label>Movie Rating</label>
+    <input asp-for="Rating" />
+    <label>Was this movie edited after release?</label>
+    <select asp-for="Edited">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+    <label>If lent out, to whom?</label>
+    <input asp-for="LentTo" />
+    <label>Notes on the Movie</label>
+    <input asp-for="Notes" />
+
+    <button type="submit"> Submit the movie review </button>
+
+</form>
