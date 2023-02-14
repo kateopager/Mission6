@@ -11,7 +11,7 @@ namespace Mission6.Models
         public string Category { get; set; }
         public ushort Year { get; set; }
         public string Director { get; set; }
-        public byte Rating { get; set; }
+        public string Rating { get; set; }
         public bool Edited { get; set; }
         public int LentTo { get; set; }
         public string Notes { get; set; }

@@ -16,7 +16,12 @@
     <label>Director Name:</label>
     <input asp-for="Director" />
     <label>Movie Rating</label>
-    <input asp-for="Rating" />
+    <select asp-for="Rating">
+        <option value="G">G</option>
+        <option value="PG">PG</option>
+        <option value="PG-13">PG-13</option>
+        <option value="R">R</option>
+    </select>
     <label>Was this movie edited after release?</label>
     <select asp-for="Edited">
         <option value="true">Yes</option>
