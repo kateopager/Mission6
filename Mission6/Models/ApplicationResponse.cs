@@ -8,7 +8,7 @@ namespace Mission6.Models
 {
     public class ApplicationResponse
     {
-        [Required]
+        [Required] /*the variables from the form are set up below with the desired input type and get/set to send the information to the form variable*/
         public string Title { get; set; }
         [Required] 
         public string Category { get; set; }
@@ -19,7 +19,7 @@ namespace Mission6.Models
         [Required]
         public string Rating { get; set; }
         public bool Edited { get; set; }
-        public int LentTo { get; set; }
+        public string LentTo { get; set; }
         public string Notes { get; set; }
     }
 }

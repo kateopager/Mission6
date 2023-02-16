@@ -27,7 +27,7 @@ namespace Mission6.Controllers
             return View();
         }
 
-        [HttpGet]
+        [HttpGet] /*This httpget will be looking to get the inputted variables on the first view and the returned view below will post the variables to the database*/
         public IActionResult MovieReview()
         {
             return View();
