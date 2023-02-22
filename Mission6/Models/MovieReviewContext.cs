@@ -9,14 +9,30 @@ namespace Mission7.Models
     public class MovieReviewContext : DbContext
     {
         //this is the constructor that has been created to run when built
-        public MovieReviewContext (DbContextOptions<MovieReviewContext> options) : base (options)
+        public MovieReviewContext(DbContextOptions<MovieReviewContext> options) : base(options)
         {
 
         }
+
         public DbSet<ApplicationResponse> responses { get; set; }
+
+        public DbSet<Category> categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder mb)
         {
+            mb.Entity<Category>().HasData(
+                new Category
+                {
+                    CategoryID = 1,
+                    CategoryName = "Musical"
+                },
+                new Category
+                {
+                    CategoryID = 2,
+                    CategoryName = "Action"
+                });
+
+
             mb.Entity<ApplicationResponse>().HasData(
                 new ApplicationResponse
                 {
@@ -48,14 +64,14 @@ namespace Mission7.Models
                     Title = "High School Musical 3: Senior Year",
                     CategoryID = 1,
                     Year = 2008,
-                    Director="Kenny Ortega",
-                    Rating= "G",
-                    Edited= false,
-                    LentTo= "NA",
-                    Notes= "NA"
+                    Director = "Kenny Ortega",
+                    Rating = "G",
+                    Edited = false,
+                    LentTo = "NA",
+                    Notes = "NA"
                 }
 
-                ) ;
-        }
+                );
+        } 
     }
 }
