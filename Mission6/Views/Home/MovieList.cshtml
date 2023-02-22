@@ -22,11 +22,11 @@
     </thead>
 
     <tbody>
-        @foreach (var x in Model)
+        @foreach(var x in Model)
             {
         <tr>
             <td>@x.Title</td>
-            <td>@x.Category</td>
+            <td>@x.Category.CategoryName</td>
             <td>@x.Year</td>
             <td>@x.Director</td>
             <td>@x.Rating</td>

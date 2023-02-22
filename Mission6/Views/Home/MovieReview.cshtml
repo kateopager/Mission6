@@ -11,7 +11,13 @@
     <label>Movie Title: </label>
     <input asp-for="Title" />
     <label>Movie Category: </label>
-    <input asp-for="Category" />
+    <select asp-for="CategoryID">
+        <option value="">Select a Movie Category</option>
+        @foreach (Category c in ViewBag.Categories)
+            {
+                <option value="@c.CategoryID">@c.CategoryName</option>
+            }
+    </select>
     <label>Year</label>
     <input asp-for="Year" />
     <label>Director Name:</label>
