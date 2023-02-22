@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Mission6.Models;
+using Mission7.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Mission6.Controllers
+namespace Mission7.Controllers
 {
     public class HomeController : Controller
     {
@@ -44,7 +44,9 @@ namespace Mission6.Controllers
 
         public IActionResult MovieList ()
         {
-            var movieslist = _movieContext.responses.ToList();
+            var movieslist = _movieContext.responses
+                .OrderBy(x => x.Title)
+                .ToList();
              
             return View(movieslist);
         }

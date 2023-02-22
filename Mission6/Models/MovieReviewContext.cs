@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Mission6.Models
+namespace Mission7.Models
 {
     public class MovieReviewContext : DbContext
     {
@@ -22,7 +22,7 @@ namespace Mission6.Models
                 {
                     MovieReviewID = 1,
                     Title = "High School Musical",
-                    Category = "Musical",
+                    CategoryID = 1,
                     Year = 2006,
                     Director = "Kenny Ortega",
                     Rating = "G",
@@ -34,7 +34,7 @@ namespace Mission6.Models
                 {
                     MovieReviewID = 2,
                     Title = "High School Musical 2",
-                    Category = "Musical",
+                    CategoryID = 1,
                     Year = 2007,
                     Director = "Kenny Ortega",
                     Rating = "G",
@@ -46,7 +46,7 @@ namespace Mission6.Models
                 {
                     MovieReviewID = 3,
                     Title = "High School Musical 3: Senior Year",
-                    Category = "Musical",
+                    CategoryID = 1,
                     Year = 2008,
                     Director="Kenny Ortega",
                     Rating= "G",
