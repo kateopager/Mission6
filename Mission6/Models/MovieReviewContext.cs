@@ -14,9 +14,9 @@ namespace Mission7.Models
 
         }
 
-        public DbSet<ApplicationResponse> responses { get; set; }
+        public DbSet<ApplicationResponse> Responses { get; set; }
 
-        public DbSet<Category> categories { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder mb)
         {

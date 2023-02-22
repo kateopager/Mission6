@@ -44,7 +44,7 @@ namespace Mission7.Controllers
 
         public IActionResult MovieList ()
         {
-            var movieslist = _movieContext.responses
+            var movieslist = _movieContext.Responses
                 .OrderBy(x => x.Title)
                 .ToList();
              
