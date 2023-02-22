@@ -11,12 +11,10 @@ namespace Mission6.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private MovieReviewContext _movieContext { get; set; }
 
-        public HomeController(ILogger<HomeController> logger, MovieReviewContext submission)
+        public HomeController(MovieReviewContext submission)
         {
-            _logger = logger;
             _movieContext = submission;
         }
 
@@ -44,10 +42,10 @@ namespace Mission6.Controllers
             return View("Confirmation", ar);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult MovieList ()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
+
     }
 }
