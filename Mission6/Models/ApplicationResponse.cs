@@ -8,6 +8,9 @@ namespace Mission6.Models
 {
     public class ApplicationResponse
     {
+        [Key]
+        [Required]
+        public int MovieReviewID { get; set; }
         [Required] /*the variables from the form are set up below with the desired input type and get/set to send the information to the form variable*/
         public string Title { get; set; }
         [Required] 
