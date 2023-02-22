@@ -53,7 +53,7 @@ namespace Mission7.Controllers
                 .OrderBy(x => x.Title)
                 .ToList();
              
-            return View();
+            return View(movieslist);
         }
 
     }
