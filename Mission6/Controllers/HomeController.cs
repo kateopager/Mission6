@@ -56,5 +56,21 @@ namespace Mission7.Controllers
             return View(movieslist);
         }
 
+
+        public IActionResult Edit()
+        {
+            ViewBag.Categories = _movieContext.Categories.ToList();
+
+            var review = _movieContext.Responses.Single();
+
+            return View("MovieList");
+        }
+
+        public IActionResult Delete()
+        {
+
+            return View();
+        }
+
     }
 }
