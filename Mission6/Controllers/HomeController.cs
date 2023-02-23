@@ -56,14 +56,24 @@ namespace Mission7.Controllers
             return View(movieslist);
         }
 
-
-        public IActionResult Edit()
+        [HttpGet]
+        public IActionResult Edit(int moviereviewid)
         {
             ViewBag.Categories = _movieContext.Categories.ToList();
 
-            var review = _movieContext.Responses.Single();
+            var review = _movieContext.Responses
+                .Single(x => x.MovieReviewID == moviereviewid);
 
-            return View("MovieList");
+            return View("MovieReview", review); //passing our record to the view to be displayed in the edit
+        }
+
+        [HttpPost]
+        public IActionResult Edit(ApplicationResponse information)
+        {
+            _movieContext.Update(information);
+            _movieContext.SaveChanges();
+
+            return RedirectToAction("MovieList");
         }
 
         public IActionResult Delete()
