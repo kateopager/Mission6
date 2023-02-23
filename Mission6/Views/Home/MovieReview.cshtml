@@ -8,15 +8,17 @@
 
 @*the form below will accept inputs and post them to the database*@
 <form method="post">
+    <div asp-validation-summary="All"></div>
+
     <label>Movie Title: </label>
     <input asp-for="Title" />
     <label>Movie Category: </label>
     <select asp-for="CategoryID">
         <option value="">Select a Movie Category</option>
         @foreach (Category c in ViewBag.Categories)
-            {
-                <option value="@c.CategoryID">@c.CategoryName</option>
-            }
+        {
+            <option value="@c.CategoryID">@c.CategoryName</option>
+        }
     </select>
     <label>Year</label>
     <input asp-for="Year" />

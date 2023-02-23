@@ -39,10 +39,19 @@ namespace Mission7.Controllers
         [HttpPost]
         public IActionResult MovieReview(ApplicationResponse ar)
         {
+            if (ModelState.IsValid)
+            {
             _movieContext.Add(ar);
             _movieContext.SaveChanges();
 
             return View("Confirmation", ar);
+            }
+            else
+            {
+                ViewBag.Categories = _movieContext.Categories.ToList();
+                return View(ar);
+            }
+
         }
         [HttpGet]
 
@@ -76,10 +85,18 @@ namespace Mission7.Controllers
             return RedirectToAction("MovieList");
         }
 
-        public IActionResult Delete()
+        [HttpGet]
+        public IActionResult Delete(int moviereviewid)
         {
-
-            return View();
+            var deletereview = _movieContext.Responses.Single(x => x.MovieReviewID == moviereviewid);
+            return View(deletereview);
+        }
+        [HttpPost]
+        public IActionResult Delete(ApplicationResponse deletion)
+        {
+            _movieContext.Responses.Remove(deletion);
+            _movieContext.SaveChanges();
+            return RedirectToAction("MovieList");
         }
 
     }
